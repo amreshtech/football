@@ -1,8 +1,8 @@
 <form [formGroup]="competitionForm">
     <label for="competitionDrop">Search Competition</label>
     <select [formControl]="competitionDrop" name="competitionDrop">
-      <option *ngFor="let competition of competitions" value="{{competition.id}}">{{competition.caption}}</option>
+      <option *ngFor="let competition of competitions" value="{{competition._links.leagueTable.href}}">{{competition.caption}}</option>
     </select>
 </form>
 
-<app-standings [competitionID]="competitionID"></app-standings>
+<app-standings [standingsUrl]="standingsUrl"></app-standings>

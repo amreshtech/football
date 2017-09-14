@@ -13,7 +13,7 @@ export class CompetitionComponent implements OnInit {
   competitionForm: FormGroup;
   competitionDrop: AbstractControl;
   competitions: Array<any>;
-  competitionID: number;
+  standingsUrl: string;
 
   constructor(private dataService: DataService, private fb: FormBuilder) {
     this.competitionForm = this.fb.group({
@@ -22,7 +22,7 @@ export class CompetitionComponent implements OnInit {
 
     this.competitionDrop = this.competitionForm.controls['competitionDrop'];
     this.competitions = [];
-    this.competitionDrop.valueChanges.subscribe(res => this.competitionID = res);
+    this.competitionDrop.valueChanges.subscribe(res => this.standingsUrl = res);
   }
 
   ngOnInit() {
