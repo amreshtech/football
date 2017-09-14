@@ -1,3 +1,8 @@
-<p>
-  competition works!
-</p>
+<form [formGroup]="competitionForm">
+    <label for="competitionDrop">Search Competition</label>
+    <select [formControl]="competitionDrop" name="competitionDrop">
+      <option *ngFor="let competition of competitions" value="{{competition.id}}">{{competition.caption}}</option>
+    </select>
+</form>
+
+<app-standings [competitionID]="competitionID"></app-standings>
