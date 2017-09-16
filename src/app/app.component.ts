@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  errorMessageHead = 'Oops!! Seems that we are experiencing some technical problem.'
+  erroMessageSub = 'Please try again later.'
 }

@@ -1,0 +1,36 @@
+<table class="ui padded table" *ngIf="playerList.length > 0">
+    <thead>
+        <tr>
+            <th>Player Name</th>
+            <th>Position</th>
+            <th>Nationality</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let player of playerList">
+            <td>
+                {{ player.name }}
+            </td>
+            <td>
+                {{ player.position }}
+            </td>
+            <td>
+                {{ player.nationality }}
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div *ngIf="!errorMessageHead && !errorMessageSub && playerList.length === 0">
+    <div class="ui active centered inline loader"></div>
+</div>
+
+<div *ngIf="playerList.length === 0">
+    <div>
+        {{ errorMessageHead }}
+    </div>
+    <div>
+        {{ errorMessageSub }}
+    </div>
+</div>

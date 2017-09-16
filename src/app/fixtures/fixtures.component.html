@@ -1,0 +1,37 @@
+<table class="ui padded table" *ngIf="fixtureList.length > 0">
+    <thead>
+        <tr>
+            <th>Home Team</th>
+            <th>Away Team</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fixture of fixtureList">
+            <td>
+                {{ fixture.homeTeamName }}
+            </td>
+            <td>
+                {{ fixture.awayTeamName }}
+            </td>
+            <!-- <td>
+                {{ fixture.days}} D : {{ fixture.hours }} H : {{ fixture.minutes }} M : {{ fixture.seconds }} S
+            </td> -->
+
+            <td> {{ fixture.countdown | async }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!errorMessageHead && !errorMessageSub && fixtureList.length === 0">
+    <div class="ui active centered inline loader"></div>
+</div>
+
+<div *ngIf="fixtureList.length === 0">
+    <div>
+        {{ errorMessageHead }}
+    </div>
+    <div>
+        {{ errorMessageSub }}
+    </div>
+</div>

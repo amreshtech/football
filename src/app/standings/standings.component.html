@@ -1,6 +1,7 @@
-<table class="ui very basic collapsing celled table">
-    <thead>
+<table class="ui padded table">
+    <thead *ngIf="standingsArray.length > 0">
         <tr>
+            <th>More</th>
             <th>Rank</th>
             <th>Team</th>
             <th>Played</th>
@@ -13,66 +14,61 @@
             <th>Points</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let standing of standingsArray">
-            <td>
-                {{ standing.position }}
-            </td>
-            <td>
-                <h4 class="ui image header">
-                    <img src="{{ standing.crestURI }}" class="ui rounded image">
-                    <div class="content">
-                        {{ standing.teamName }}
-                    </div>
-                </h4>
-            </td>
-            <td>
-                {{ standing.playedGames }}
-            </td>
-            <td>
-                {{ standing.wins }}
-            </td>
-            <td>
-                {{ standing.draws }}
-            </td>
-            <td>
-                {{ standing.losses }}
-            </td>
-            <td>
-                {{ standing.goals }}
-            </td>
-            <td>
-                {{ standing.goalsAgainst }}
-            </td>
-            <td>
-                {{ standing.goalDifference }}
-            </td>
-            <td>
-                {{ standing.points }}
-            </td>
-        </tr>
+    <tbody class="ui fluid accordion">
+        <ng-template ngFor let-standing [ngForOf]="standingsArray">
+            <tr class="title">
+                <td (click)="setTeamUrl(standing._links.team.href)"><i class="dropdown icon"></i></td>
+                <td>
+                    {{ standing.position }}
+                </td>
+                <td>
+                    <h4 class="ui image header">
+                        <img src="{{ standing.crestURI }}" class="ui rounded image">
+                        <div class="content" (click)="setTeamUrl(standing._links.team.href)">
+                            {{ standing.teamName }}
+                        </div>
+                    </h4>
+                </td>
+                <td>
+                    {{ standing.playedGames }}
+                </td>
+                <td>
+                    {{ standing.wins }}
+                </td>
+                <td>
+                    {{ standing.draws }}
+                </td>
+                <td>
+                    {{ standing.losses }}
+                </td>
+                <td>
+                    {{ standing.goals }}
+                </td>
+                <td>
+                    {{ standing.goalsAgainst }}
+                </td>
+                <td>
+                    {{ standing.goalDifference }}
+                </td>
+                <td>
+                    {{ standing.points }}
+                </td>
+            </tr>
+            <tr *ngIf="teamUrl === standing._links.team.href">
+                <td class="transition hidden"></td>
+                <td class="transition hidden" colspan="10">
+                    <app-teams [teamUrl]="teamUrl"></app-teams>
+                </td>
+            </tr>
+        </ng-template>
     </tbody>
 </table>
 
-<div class="ui styled accordion">
-    <div class="title active">
-        <i class="dropdown icon"></i> What is a dog?
+<div *ngIf="standingsArray.length === 0">
+    <div>
+        {{ errorMessageHead }}
     </div>
-    <div class="content active">
-        <p class="transition visible" style="display: block !important;">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
-    </div>
-    <div class="title">
-        <i class="dropdown icon"></i> What kinds of dogs are there?
-    </div>
-    <div class="content">
-        <p class="transition hidden">There are many breeds of dogs. Each breed varies in size and temperament. Owners often select a breed of dog that they find to be compatible with their own lifestyle and desires from a companion.</p>
-    </div>
-    <div class="title">
-        <i class="dropdown icon"></i> How do you acquire a dog?
-    </div>
-    <div class="content">
-        <p>Three common ways for a prospective owner to acquire a dog is from pet shops, private owners, or shelters.</p>
-        <p>A pet shop may be the most convenient way to buy a dog. Buying a dog from a private owner allows you to assess the pedigree and upbringing of your dog before choosing to take it home. Lastly, finding your dog from a shelter, helps give a good
-            home to a dog who may not find one so readily.</p>
+    <div>
+        {{ errorMessageSub }}
     </div>
 </div>

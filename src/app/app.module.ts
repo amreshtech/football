@@ -13,6 +13,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { RoutingModule } from 'app/routing/routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PlayersComponent } from './players/players.component';
+import { FixturesComponent } from './fixtures/fixtures.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PlayersComponent,
+    FixturesComponent
   ],
   imports: [
     BrowserModule,
