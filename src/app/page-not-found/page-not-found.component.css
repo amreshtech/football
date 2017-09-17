@@ -1,0 +1,36 @@
+.error-container {
+    background: transparent;
+    border: none;
+    width: 40%;
+    height: 40%;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    color: #fff;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.error-code {
+    font-size: 12em;
+    font-weight: 900;
+}
+
+.zero {
+    color: #FF8800;
+}
+
+.msg {
+    font-size: 2em;
+}
+
+a:visited {
+    color: #fff;
+}
+
+a:hover {
+    color: #1B0CF3;
+}
