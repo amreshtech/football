@@ -1,0 +1,16 @@
+thead {
+    font-size: 1.2em;
+}
+
+tbody>tr {
+    font-size: 1.2em;
+    text-align: left;
+}
+
+thead>tr {
+    text-align: left;
+}
+
+table {
+    font-family: "MontSerrat", sans-serif;
+}

@@ -1,15 +1,15 @@
 <div *ngIf="competitions.length > 0">
-    <form [formGroup]="competitionForm">
-        <label for="competitionDrop">Search Competition</label>
-        <select [formControl]="competitionDrop" name="competitionDrop">
-          <option *ngFor="let competition of competitions" value="{{competition._links.leagueTable.href}}">{{competition.caption}}</option>
+    <form [formGroup]="competitionForm" class="form-horizontal">
+        <div class="form-group">
+            <label for="competitionDrop" class="control-label select-comp">Select Competition</label>
+            <select [formControl]="competitionDrop" name="competitionDrop" class="form-control select-opt">
+          <option class="item select-opt" *ngFor="let competition of competitions" value="{{competition._links.leagueTable.href}}">{{competition.caption}}</option>
         </select>
+        </div>
     </form>
-
     <app-standings [standingsUrl]="standingsUrl">
     </app-standings>
 </div>
-
 <div *ngIf="competitions.length === 0 && !errorMessageHead && !errorMessageSub">
     <div class="ui active centered inline loader"></div>
 </div>

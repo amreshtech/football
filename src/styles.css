@@ -1,5 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display');
 body {
-    background-color: #F59C17
+    background-color: rgb(52, 183, 104)!important
+}
+
+.form-control,
+table,
+option {
+    box-shadow: 4px 5px 11px rgba(1, 0, 0, 0.14)!important;
+}
+
+th {
+    font-size: 1.1em;
+    font-family: "Montserrat", sans-serif;
+}
+
+tr {
+    text-align: center;
+}
+
+tbody {
+    font-size: 1.2em;
 }

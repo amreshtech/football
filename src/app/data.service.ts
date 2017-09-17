@@ -61,11 +61,12 @@ export class DataService {
     this.minutesDifference =  Math.floor(timeDifference / 60) % 60;
     timeDifference -= this.minutesDifference * 60;
     this.secondsDifference = Math.floor(timeDifference % 60);
+
     return [
-      this.daysDifference + 'd',
-      this.hoursDifference + 'h',
-      this.minutesDifference + 'm',
-      this.secondsDifference + 's'
+      (this.daysDifference >= 0) ? this.daysDifference + 'd' : '' ,
+      (this.hoursDifference >= 0) ? this.hoursDifference + 'h' : '',
+      (this.minutesDifference >= 0) ? this.minutesDifference + 'm' : '',
+      (this.secondsDifference >= 0) ? this.secondsDifference + 's' : ''
      ].join(' ');
   }
 }

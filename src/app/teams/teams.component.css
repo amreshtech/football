@@ -1,0 +1,8 @@
+.ui.secondary.menu {
+    font-size: 0.8em!important;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.ui.secondary.menu>a {
+    font-weight: bold;
+}

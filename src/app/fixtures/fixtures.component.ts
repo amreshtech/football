@@ -38,7 +38,7 @@ export class FixturesComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.fixtureUrl.currentValue) {
-      this.dataService.getFixtureDetails(changes.fixtureUrl.currentValue + '?timeFrame=n60')
+      this.dataService.getFixtureDetails(changes.fixtureUrl.currentValue + '?timeFrame=n80')
         .subscribe(res => {
           this.fixtureList = JSON.parse(res._body).fixtures.slice(0, 5);
           this.fixtureList.forEach((fixture: any) => {
