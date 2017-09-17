@@ -1,0 +1,11 @@
+p {
+    font-size: 1em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    bottom: 0px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
